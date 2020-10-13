@@ -22,9 +22,8 @@ cat big.txt  0.00s user 0.01s system 14% cpu 0.046 total
 module Main where
 
 import Control.Concurrent
-import Z.IO.Buffered
-import Z.IO.StdStream
 import qualified Z.Data.Vector as V
+import Z.IO
 
 main :: IO ()
 main = do

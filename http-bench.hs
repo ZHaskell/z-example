@@ -16,10 +16,8 @@ wrk -c5000 http://localhost:8888
 module Main where
 
 import Control.Monad
+import Z.IO
 import Z.IO.Network
-import Z.IO.Resource
-import Z.IO.Buffered
-import Z.IO.Exception
 import qualified Z.Data.Vector as V
 import qualified Z.Foreign as FFI
 import Foreign.ForeignPtr
