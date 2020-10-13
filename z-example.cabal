@@ -14,7 +14,7 @@ executable wc
     -- other-extensions:
     build-depends:    base >=4.12.0.0
                     , Z-Data >= 0.1.6.1 && < 0.1.7
-                    , Z-IO >= 0.1.5.1
+                    , Z-IO >= 0.1.5.2
     hs-source-dirs:   ./
     default-language: Haskell2010
 
@@ -28,7 +28,7 @@ executable http-bench
     -- other-extensions:
     build-depends:    base >=4.12.0.0
                     , Z-Data >= 0.1.6.1 && < 0.1.7
-                    , Z-IO >= 0.1.5.1
+                    , Z-IO >= 0.1.5.2
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:  -O2 -threaded -rtsopts -eventlog -with-rtsopts=-N
@@ -43,6 +43,6 @@ executable guess-std-type
     -- other-extensions:
     build-depends:    base >=4.12.0.0
                     , Z-Data >= 0.1.6.1 && < 0.1.7
-                    , Z-IO >= 0.1.5.1
+                    , Z-IO >= 0.1.5.2
     hs-source-dirs:   ./
     default-language: Haskell2010
