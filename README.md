@@ -5,5 +5,5 @@
 This package provides several examples using [project-Z](https://github.com/haskell-Z/Z) libraries, demonstrating usability and performance.
 
 * wc, simple word counter with same performance with system `wc`.
-* http-bench, bench Example management performance with HTTP benchmark tools.
+* http-bench, bench network performance with HTTP benchmark tools.
 * guess-std-type, provide infos on how stdout is connected.
