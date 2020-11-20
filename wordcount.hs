@@ -30,7 +30,7 @@ main = do
     printStd =<< withMVar stdinBuf (loop 0 0 0)
     putStd "\n"
   where
-    loop :: Int -> Int -> Int -> BufferedInput StdStream -> IO (Int, Int, Int)
+    loop :: Int -> Int -> Int -> BufferedInput -> IO (Int, Int, Int)
     loop !len !wc !lc input = do
         line <- readLine input
         case line of

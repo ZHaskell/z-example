@@ -7,143 +7,135 @@
 On my MBP13 2020, 2 GHz Quad-Core Intel Core i5
 
 benchmarking Examples/encode/twitter100-aeson
-time                 218.3 μs   (215.5 μs .. 221.6 μs)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 221.3 μs   (219.0 μs .. 223.2 μs)
-std dev              6.993 μs   (5.984 μs .. 8.325 μs)
-variance introduced by outliers: 27% (moderately inflated)
-
-benchmarking Examples/encode/twitter100-z
-time                 175.1 μs   (172.7 μs .. 177.4 μs)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 176.2 μs   (174.7 μs .. 177.7 μs)
-std dev              5.131 μs   (4.114 μs .. 6.462 μs)
-variance introduced by outliers: 25% (moderately inflated)
-
-benchmarking Examples/encode/jp100-aeson
-time                 225.9 μs   (222.8 μs .. 229.2 μs)
-                     0.998 R²   (0.998 R² .. 0.999 R²)
-mean                 226.5 μs   (224.2 μs .. 228.9 μs)
-std dev              7.876 μs   (6.725 μs .. 9.671 μs)
-variance introduced by outliers: 31% (moderately inflated)
-
-benchmarking Examples/encode/jp100-z
-time                 174.5 μs   (172.2 μs .. 176.7 μs)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 173.4 μs   (171.6 μs .. 174.9 μs)
-std dev              5.706 μs   (4.813 μs .. 6.699 μs)
-variance introduced by outliers: 30% (moderately inflated)
-
-benchmarking Examples/encode/geometry-aeson
-time                 1.984 ms   (1.954 ms .. 2.014 ms)
-                     0.998 R²   (0.997 R² .. 0.999 R²)
-mean                 1.990 ms   (1.967 ms .. 2.011 ms)
-std dev              70.41 μs   (54.98 μs .. 89.17 μs)
-variance introduced by outliers: 22% (moderately inflated)
-
-benchmarking Examples/encode/geometry-z
-time                 2.133 ms   (2.106 ms .. 2.158 ms)
-                     0.998 R²   (0.997 R² .. 0.999 R²)
-mean                 2.169 ms   (2.146 ms .. 2.202 ms)
-std dev              89.36 μs   (66.87 μs .. 158.1 μs)
-variance introduced by outliers: 26% (moderately inflated)
-
-benchmarking Examples/encode/github-aeson
-time                 229.6 μs   (225.5 μs .. 233.2 μs)
-                     0.998 R²   (0.997 R² .. 0.999 R²)
-mean                 230.1 μs   (227.3 μs .. 232.5 μs)
-std dev              8.806 μs   (7.538 μs .. 10.53 μs)
-variance introduced by outliers: 36% (moderately inflated)
-
-benchmarking Examples/encode/github-z
-time                 195.0 μs   (193.0 μs .. 196.9 μs)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 194.9 μs   (193.1 μs .. 196.9 μs)
-std dev              6.108 μs   (5.187 μs .. 7.466 μs)
-variance introduced by outliers: 27% (moderately inflated)
-
-benchmarking Examples/encode/buffer-builder-aeson
-time                 522.6 μs   (514.9 μs .. 531.2 μs)
-                     0.998 R²   (0.998 R² .. 0.999 R²)
-mean                 527.9 μs   (522.4 μs .. 533.3 μs)
-std dev              18.79 μs   (16.01 μs .. 22.74 μs)
-variance introduced by outliers: 28% (moderately inflated)
-
-benchmarking Examples/encode/buffer-builder-z
-time                 449.8 μs   (443.9 μs .. 456.0 μs)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 449.3 μs   (445.4 μs .. 453.2 μs)
-std dev              14.10 μs   (11.97 μs .. 16.43 μs)
-variance introduced by outliers: 24% (moderately inflated)
-
-benchmarking Examples/decode/twitter100-aeson
-time                 1.144 ms   (1.100 ms .. 1.181 ms)
-                     0.993 R²   (0.990 R² .. 0.997 R²)
-mean                 1.081 ms   (1.064 ms .. 1.099 ms)
-std dev              56.53 μs   (44.92 μs .. 72.27 μs)
-variance introduced by outliers: 42% (moderately inflated)
-
-benchmarking Examples/decode/twitter100-z
-time                 417.4 μs   (416.0 μs .. 419.1 μs)
-                     1.000 R²   (1.000 R² .. 1.000 R²)
-mean                 416.7 μs   (415.5 μs .. 417.8 μs)
-std dev              3.826 μs   (3.113 μs .. 5.183 μs)
-
-benchmarking Examples/decode/jp100-aeson
-time                 1.502 ms   (1.478 ms .. 1.526 ms)
-                     0.998 R²   (0.998 R² .. 0.999 R²)
-mean                 1.500 ms   (1.488 ms .. 1.513 ms)
-std dev              41.38 μs   (35.58 μs .. 49.78 μs)
-variance introduced by outliers: 15% (moderately inflated)
-
-benchmarking Examples/decode/jp100-z
-time                 555.7 μs   (525.6 μs .. 580.2 μs)
-                     0.986 R²   (0.977 R² .. 0.993 R²)
-mean                 506.1 μs   (494.6 μs .. 522.8 μs)
-std dev              44.67 μs   (33.47 μs .. 68.95 μs)
-variance introduced by outliers: 71% (severely inflated)
-
-benchmarking Examples/decode/geometry-aeson
-time                 2.563 ms   (2.405 ms .. 2.771 ms)
-                     0.968 R²   (0.954 R² .. 0.989 R²)
-mean                 2.346 ms   (2.272 ms .. 2.445 ms)
-std dev              275.8 μs   (202.2 μs .. 372.0 μs)
-variance introduced by outliers: 75% (severely inflated)
-
-benchmarking Examples/decode/geometry-z
-time                 839.8 μs   (833.7 μs .. 847.5 μs)
-                     0.999 R²   (0.998 R² .. 1.000 R²)
-mean                 847.8 μs   (842.6 μs .. 856.4 μs)
-std dev              21.45 μs   (12.52 μs .. 32.41 μs)
-variance introduced by outliers: 15% (moderately inflated)
-
-benchmarking Examples/decode/github-aeson
-time                 1.476 ms   (1.457 ms .. 1.503 ms)
-                     0.998 R²   (0.996 R² .. 1.000 R²)
-mean                 1.464 ms   (1.456 ms .. 1.485 ms)
-std dev              39.26 μs   (19.88 μs .. 74.96 μs)
-variance introduced by outliers: 15% (moderately inflated)
-
-benchmarking Examples/decode/github-z
-time                 485.9 μs   (475.1 μs .. 500.2 μs)
-                     0.995 R²   (0.991 R² .. 0.999 R²)
-mean                 487.3 μs   (481.7 μs .. 495.2 μs)
-std dev              21.16 μs   (13.97 μs .. 30.04 μs)
-variance introduced by outliers: 37% (moderately inflated)
-
-benchmarking Examples/decode/buffer-builder-aeson
-time                 2.621 ms   (2.586 ms .. 2.650 ms)
-                     0.999 R²   (0.998 R² .. 0.999 R²)
-mean                 2.590 ms   (2.567 ms .. 2.613 ms)
-std dev              78.66 μs   (67.06 μs .. 95.65 μs)
+time                 231.0 μs   (229.7 μs .. 232.7 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 233.1 μs   (231.9 μs .. 235.5 μs)
+std dev              5.407 μs   (3.076 μs .. 9.648 μs)
 variance introduced by outliers: 16% (moderately inflated)
 
+benchmarking Examples/encode/twitter100-z
+time                 162.8 μs   (162.4 μs .. 163.2 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 162.5 μs   (162.2 μs .. 163.0 μs)
+std dev              1.276 μs   (982.4 ns .. 1.876 μs)
+
+benchmarking Examples/encode/jp100-aeson
+time                 234.9 μs   (234.1 μs .. 235.8 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 235.7 μs   (235.0 μs .. 236.7 μs)
+std dev              2.794 μs   (2.192 μs .. 3.543 μs)
+
+benchmarking Examples/encode/jp100-z
+time                 166.2 μs   (165.5 μs .. 166.9 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 166.2 μs   (165.8 μs .. 166.7 μs)
+std dev              1.445 μs   (1.152 μs .. 1.827 μs)
+
+benchmarking Examples/encode/geometry-aeson
+time                 2.030 ms   (2.024 ms .. 2.036 ms)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 2.049 ms   (2.039 ms .. 2.077 ms)
+std dev              49.84 μs   (24.08 μs .. 97.48 μs)
+variance introduced by outliers: 12% (moderately inflated)
+
+benchmarking Examples/encode/geometry-z
+time                 1.455 ms   (1.447 ms .. 1.466 ms)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 1.450 ms   (1.447 ms .. 1.454 ms)
+std dev              11.45 μs   (7.887 μs .. 16.20 μs)
+
+benchmarking Examples/encode/github-aeson
+time                 238.7 μs   (238.1 μs .. 239.7 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 241.0 μs   (239.6 μs .. 245.1 μs)
+std dev              7.017 μs   (3.573 μs .. 14.63 μs)
+variance introduced by outliers: 24% (moderately inflated)
+
+benchmarking Examples/encode/github-z
+time                 181.1 μs   (180.1 μs .. 182.1 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 180.3 μs   (179.9 μs .. 180.9 μs)
+std dev              1.614 μs   (1.301 μs .. 2.196 μs)
+
+benchmarking Examples/encode/buffer-builder-aeson
+time                 544.2 μs   (542.7 μs .. 545.8 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 545.9 μs   (543.9 μs .. 548.4 μs)
+std dev              7.687 μs   (5.543 μs .. 11.64 μs)
+
+benchmarking Examples/encode/buffer-builder-z
+time                 426.7 μs   (424.2 μs .. 430.2 μs)
+                     0.998 R²   (0.997 R² .. 0.999 R²)
+mean                 441.7 μs   (435.8 μs .. 449.3 μs)
+std dev              22.23 μs   (18.53 μs .. 27.14 μs)
+variance introduced by outliers: 46% (moderately inflated)
+
+benchmarking Examples/decode/twitter100-aeson
+time                 1.142 ms   (1.137 ms .. 1.148 ms)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 1.155 ms   (1.148 ms .. 1.163 ms)
+std dev              25.86 μs   (22.05 μs .. 31.19 μs)
+variance introduced by outliers: 11% (moderately inflated)
+
+benchmarking Examples/decode/twitter100-z
+time                 420.9 μs   (417.4 μs .. 425.9 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 419.7 μs   (417.8 μs .. 423.2 μs)
+std dev              8.482 μs   (5.988 μs .. 12.09 μs)
+variance introduced by outliers: 12% (moderately inflated)
+
+benchmarking Examples/decode/jp100-aeson
+time                 1.570 ms   (1.557 ms .. 1.593 ms)
+                     0.998 R²   (0.997 R² .. 1.000 R²)
+mean                 1.584 ms   (1.572 ms .. 1.609 ms)
+std dev              60.46 μs   (38.63 μs .. 101.6 μs)
+variance introduced by outliers: 25% (moderately inflated)
+
+benchmarking Examples/decode/jp100-z
+time                 514.7 μs   (512.5 μs .. 517.5 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 514.0 μs   (512.6 μs .. 515.9 μs)
+std dev              5.428 μs   (4.139 μs .. 8.436 μs)
+
+benchmarking Examples/decode/geometry-aeson
+time                 2.275 ms   (2.254 ms .. 2.308 ms)
+                     0.998 R²   (0.997 R² .. 0.999 R²)
+mean                 2.262 ms   (2.246 ms .. 2.283 ms)
+std dev              60.43 μs   (44.70 μs .. 79.65 μs)
+variance introduced by outliers: 14% (moderately inflated)
+
+benchmarking Examples/decode/geometry-z
+time                 838.0 μs   (831.3 μs .. 845.6 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 837.0 μs   (832.3 μs .. 844.0 μs)
+std dev              19.39 μs   (14.14 μs .. 29.82 μs)
+variance introduced by outliers: 13% (moderately inflated)
+
+benchmarking Examples/decode/github-aeson
+time                 1.427 ms   (1.423 ms .. 1.431 ms)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 1.423 ms   (1.419 ms .. 1.426 ms)
+std dev              11.88 μs   (9.815 μs .. 14.86 μs)
+
+benchmarking Examples/decode/github-z
+time                 477.5 μs   (473.3 μs .. 481.6 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 473.1 μs   (471.4 μs .. 475.3 μs)
+std dev              6.533 μs   (4.399 μs .. 10.19 μs)
+
+benchmarking Examples/decode/buffer-builder-aeson
+time                 2.823 ms   (2.760 ms .. 2.890 ms)
+                     0.997 R²   (0.995 R² .. 0.999 R²)
+mean                 2.805 ms   (2.779 ms .. 2.843 ms)
+std dev              95.62 μs   (59.34 μs .. 144.1 μs)
+variance introduced by outliers: 19% (moderately inflated)
+
 benchmarking Examples/decode/buffer-builder-z
-time                 1.165 ms   (1.139 ms .. 1.186 ms)
-                     0.997 R²   (0.995 R² .. 0.998 R²)
-mean                 1.119 ms   (1.105 ms .. 1.133 ms)
-std dev              46.01 μs   (38.82 μs .. 55.35 μs)
-variance introduced by outliers: 30% (moderately inflated)
+time                 1.164 ms   (1.145 ms .. 1.184 ms)
+                     0.998 R²   (0.997 R² .. 0.999 R²)
+mean                 1.166 ms   (1.157 ms .. 1.179 ms)
+std dev              38.11 μs   (29.67 μs .. 47.40 μs)
+variance introduced by outliers: 21% (moderately inflated)
 -}
 
 import  Criterion.Main    (Benchmark, bench, bgroup, defaultMain, nf)
