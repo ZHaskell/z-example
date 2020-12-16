@@ -142,7 +142,6 @@ import  Criterion.Main    (Benchmark, bench, bgroup, defaultMain, nf)
 
 import  Data.Aeson as A
 import  Z.Data.JSON as J
-import  Z.Data.Builder (buildBytesList)
 import qualified Data.ByteString  as B (readFile)
 import qualified Z.IO.FileSystem  as Z (quickReadFile)
 
@@ -177,15 +176,15 @@ main = do
       [ bgroup "Examples"
         [ bgroup "encode"
           [ bench "twitter100-aeson" $ nf A.encode v_twitter100
-          , bench "twitter100-z" $ nf J.encodeBytes v_twitter100'
+          , bench "twitter100-z" $ nf J.encode v_twitter100'
           , bench "jp100-aeson" $ nf A.encode v_jp100
-          , bench "jp100-z" $ nf J.encodeBytes v_jp100'
+          , bench "jp100-z" $ nf J.encode v_jp100'
           , bench "geometry-aeson" $ nf A.encode v_geometry
-          , bench "geometry-z" $ nf J.encodeBytes v_geometry'
+          , bench "geometry-z" $ nf J.encode v_geometry'
           , bench "github-aeson" $ nf A.encode v_github
-          , bench "github-z" $ nf J.encodeBytes v_github'
+          , bench "github-z" $ nf J.encode v_github'
           , bench "buffer-builder-aeson" $ nf A.encode v_bb
-          , bench "buffer-builder-z" $ nf J.encodeBytes v_bb'
+          , bench "buffer-builder-z" $ nf J.encode v_bb'
           ]
         , bgroup "decode"
           [ bench "twitter100-aeson" $ nf (A.decodeStrict @A.Value) twitter100
