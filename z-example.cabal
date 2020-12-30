@@ -13,8 +13,8 @@ executable wc
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base >=4.12.0.0
-                    , Z-Data >= 0.1.7 
-                    , Z-IO >= 0.1.6
+                    , Z-Data >= 0.3 
+                    , Z-IO >= 0.3
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:  -O2 
@@ -28,8 +28,8 @@ executable http-bench
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base >=4.12.0.0
-                    , Z-Data >= 0.1.7 
-                    , Z-IO >= 0.1.6
+                    , Z-Data >= 0.3 
+                    , Z-IO >= 0.3
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:  -O2 -threaded -rtsopts -eventlog -with-rtsopts=-N
@@ -43,8 +43,8 @@ executable guess-std-type
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
     build-depends:    base >=4.12.0.0
-                    , Z-Data >= 0.1.7 
-                    , Z-IO >= 0.1.6
+                    , Z-Data >= 0.3 
+                    , Z-IO >= 0.3
     hs-source-dirs:   ./
     default-language: Haskell2010
 
@@ -60,8 +60,24 @@ executable json-bench
                     , criterion 
                     , aeson
                     , bytestring
-                    , Z-Data >= 0.1.7 
-                    , Z-IO >= 0.1.6
+                    , Z-Data >= 0.3 
+                    , Z-IO >= 0.3
+    hs-source-dirs:   ./
+    default-language: Haskell2010
+    ghc-options:  -O2 
+
+executable gettime-bench
+    main-is:          gettime-bench.hs
+
+    -- Modules included in this executable, other than Main.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base >=4.12.0.0
+                    , criterion 
+                    , time
+                    , Z-IO >= 0.3
     hs-source-dirs:   ./
     default-language: Haskell2010
     ghc-options:  -O2 

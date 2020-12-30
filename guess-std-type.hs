@@ -23,9 +23,9 @@ main :: IO ()
 main = do
     if (isStdStreamTTY stdout)
     then do
-        putLineStd "stdout connected to a tty"
+        putStd "stdout connected to a tty"
     else do
-        putLineStd "stdout connected to a file"
+        putStd "stdout connected to a file"
 
 
 
