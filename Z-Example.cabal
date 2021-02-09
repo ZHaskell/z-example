@@ -1,0 +1,64 @@
+cabal-version: 2.2
+name:          Z-Example
+version:       0.1.0.0
+synopsis:      Examples for Z toolkit.
+description:
+  Examples for Z toolkit, a simple and high performance IO toolkit for
+  Haskell.
+
+license:       BSD-3-Clause
+license-file:  LICENSE
+copyright:     (c) Z.Haskell Contributors
+author:        Z.Haskell Contributors
+maintainer:    winterland1989@gmail.com
+category:      Data
+homepage:      https://github.com/ZHaskell/Z-Examples
+bug-reports:   https://github.com/ZHaskell/Z-Examples/issues
+build-type:    Simple
+
+source-repository head
+  type:     git
+  location: git://github.com/ZHaskell/z-example.git
+
+executable z-wc
+  main-is:          wordcount.hs
+  hs-source-dirs:   examples
+  build-depends:
+    , base    >=4.12.0.0 && <5
+    , Z-Data  >=0.5
+    , Z-IO    >=0.5
+
+  default-language: Haskell2010
+
+executable z-http-bench
+  main-is:          http-bench.hs
+  hs-source-dirs:   examples
+  build-depends:
+    , base    >=4.12.0.0 && <5
+    , Z-Data  >=0.5
+    , Z-IO    >=0.5
+
+  default-language: Haskell2010
+  ghc-options:      -O2 -threaded -rtsopts -with-rtsopts=-N
+
+executable z-guess-std-type
+  main-is:          guess-std-type.hs
+  hs-source-dirs:   examples
+  build-depends:
+    , base    >=4.12.0.0 && <5
+    , Z-Data  >=0.5
+    , Z-IO    >=0.5
+
+  default-language: Haskell2010
+
+executable z-gettime-bench
+  main-is:          gettime-bench.hs
+  hs-source-dirs:   examples
+  build-depends:
+    , base       >=4.12.0.0 && <5
+    , criterion
+    , time
+    , Z-IO       >=0.5
+
+  default-language: Haskell2010
+  ghc-options:      -O2
