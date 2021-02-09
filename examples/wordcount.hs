@@ -12,7 +12,7 @@ test file: https://github.com/ChrisPenner/wc/blob/master/data/big.txt
  cat big.txt  0.00s user 0.00s system 14% cpu 0.045 total
  wc  0.04s user 0.00s system 99% cpu 0.044 total
 
-time cat big.txt | ./dist-newstyle/build/x86_64-linux/ghc-8.10.2/examples-0.1.0.0/x/wc/build/wc/wc
+time cat big.txt | cabal run z-wc
 (6488666,1095695,128457)
 cat big.txt  0.00s user 0.01s system 14% cpu 0.046 total
   0.04s user 0.01s system 99% cpu 0.046 total
