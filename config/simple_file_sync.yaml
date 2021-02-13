@@ -1,0 +1,6 @@
+- src_path: .
+  dest_path: /tmp/aaa
+  ignores:
+    - .stack-work
+    - dist-newstyle
+    - stack.yaml.lock
