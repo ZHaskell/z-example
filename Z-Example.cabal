@@ -62,3 +62,16 @@ executable z-gettime-bench
 
   default-language: Haskell2010
   ghc-options:      -O2
+
+executable z-simple-file-sync
+  main-is:          SimpleFileSync.hs
+  hs-source-dirs:   examples
+  build-depends:
+    , base             >=4.12.0.0 && <5
+    , safe-exceptions  ^>=0.1
+    , Z-Data           ^>=0.6
+    , Z-IO             ^>=0.6
+    , Z-YAML           ^>=0.3
+
+  default-language: Haskell2010
+  ghc-options:      -threaded -Wall -fno-warn-unused-do-bind
