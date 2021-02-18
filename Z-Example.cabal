@@ -52,3 +52,33 @@ executable z-simple-file-sync
 
   default-language: Haskell2010
   ghc-options:      -threaded -Wall -fno-warn-unused-do-bind
+
+executable z-lsp-network-server
+  main-is:          server.hs
+  hs-source-dirs:   Network/LanguageServer
+  build-depends:
+    , base                  >=4.12.0.0 && <5
+    , optparse-applicative  ^>=0.16
+    , Z-Data                ^>=0.6
+    , Z-IO                  ^>=0.6.2
+
+  default-language: Haskell2010
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+    -threaded -rtsopts -with-rtsopts=-N
+
+executable z-lsp-network-client
+  main-is:          client.hs
+  hs-source-dirs:   Network/LanguageServer
+  build-depends:
+    , base    >=4.12.0.0 && <5
+    , Z-Data  ^>=0.6
+    , Z-IO    ^>=0.6.2
+    , Z-YAML  ^>=0.3
+
+  default-language: Haskell2010
+  ghc-options:
+    -Wall -Wcompat -Widentities -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+    -threaded -rtsopts -with-rtsopts=-N
