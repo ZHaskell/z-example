@@ -42,7 +42,7 @@ executable z-guess-std-type
 
 executable z-simple-file-sync
   main-is:          SimpleFileSync.hs
-  hs-source-dirs:   examples
+  hs-source-dirs:   FileSystem
   build-depends:
     , base             >=4.12.0.0 && <5
     , safe-exceptions  ^>=0.1
