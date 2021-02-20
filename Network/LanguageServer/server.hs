@@ -100,7 +100,7 @@ runLangServer (i, o) Project{..} = do
       stdout' <- Z.newBufferedInput stdout
 
       void . forkIO $
-        forever $ fmap Builder.bytes (Z.readAll' stderr') >>= Log.fatal
+        forever $ Z.readAll' stderr' >>= Log.fatal. Builder.bytes
 
       -- client in
       void . forkIO $ Log.withDefaultLogger $ do
@@ -122,6 +122,6 @@ runLangServer (i, o) Project{..} = do
 foreverWhen :: IO a -> (a -> Bool) -> Builder.Builder () -> (a -> IO b) -> IO ()
 foreverWhen res cond !msg f = do
   r <- res
-  if (cond r)
+  if cond r
      then f r >> foreverWhen res cond msg f
      else Log.fatal msg

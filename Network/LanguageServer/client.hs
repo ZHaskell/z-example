@@ -142,12 +142,12 @@ runLangClient (tcpi, tcpo) (stdi, stdo) project = Log.withDefaultLogger $ do
 foreverWhen :: IO a -> (a -> Bool) -> B.Builder () -> (a -> IO b) -> IO ()
 foreverWhen res cond !msg f = Log.withDefaultLogger $ do
   r <- res
-  if (cond r)
+  if cond r
      then f r >> foreverWhen res cond msg f
      else Log.fatal msg
 
 findProjectByPath :: CBytes -> [Project] -> Maybe Project
-findProjectByPath path projects = List.find cond projects
+findProjectByPath path = List.find cond
   where
     cond project =
-      (CBytes.toBytes $ root project) `V.isPrefixOf` (CBytes.toBytes path)
+      CBytes.toBytes (root project) `V.isPrefixOf` CBytes.toBytes path

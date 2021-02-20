@@ -10,7 +10,7 @@ import           Control.Concurrent      (forkIO)
 import           Control.Concurrent.MVar (MVar, newEmptyMVar, takeMVar,
                                           tryPutMVar)
 import           Control.Exception.Safe  (tryAny)
-import           Control.Monad           (void, when)
+import           Control.Monad           (unless, void)
 import           GHC.Generics            (Generic)
 import qualified Z.Data.Builder          as Builder
 import           Z.Data.CBytes           (CBytes)
@@ -35,7 +35,7 @@ main = Log.withDefaultLogger $ do
   argv <- getArgs
   if length argv /= 2
      then Log.fatal $ "No sush config file, run "
-                   <> (CBytes.toBuilder $ argv !! 0) <> " <your-config-file-path>."
+                   <> CBytes.toBuilder (head argv) <> " <your-config-file-path>."
      else do
        let configPath = argv !! 1
        config <- readYAMLFile configPath
@@ -63,18 +63,18 @@ runRsync flagChange Project{..} = do
   src_path' <- (<> "/") <$> normalize src_path     -- add a trailing slash
   dest_path' <- (<> "/") <$> normalize dest_path   -- add a trailing slash
   let args = ["-azH", "--delete", "--partial"]
-          ++ (concat $ map (\i -> ["--exclude", i]) ignores)
+          ++ concatMap (\i -> ["--exclude", i]) ignores
           ++ [src_path', dest_path']
 
   takeMVar flagChange
   Log.debug $ "Run: rsync "
-           <> foldr Builder.append "" (map ((<> " "). CBytes.toBuilder) args)
+           <> foldr (Builder.append . (<> " ") . CBytes.toBuilder) "" args
   (_out, err, _code) <- Proc.readProcess
     Proc.defaultProcessOptions { Proc.processFile = "rsync"
                                , Proc.processArgs = args
                                }
     ""
-  when (not $ V.null err) $ Log.fatal $ Builder.bytes err
+  unless (V.null err) $ Log.fatal $ Builder.bytes err
 
 foreverRun :: IO () -> IO ()
 foreverRun f = do
