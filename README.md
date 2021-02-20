@@ -12,6 +12,8 @@ This package provides several examples using [ZHaskell](https://github.com/ZHask
 Automaticly run `rsync` if change happens. This will helps if you do development
 on remote machines, but use local file editors.
 
+Config example: [simple-file-sync.yaml](./FileSystem/config/simple_file_sync.yaml)
+
 
 ## :fish_cake: LSP-Network :fish_cake:
 
@@ -25,7 +27,7 @@ including directory structure.**
 
 > :star: You can use [docker volumes](https://docs.docker.com/storage/volumes/)
 > on server to keep the same project structure as your locals.
-> And a [SimpleFileSync](#simple-file-sync) to sync your projects.
+> And a [SimpleFileSync](#fish_cake-simple-file-sync-fish_cake) to sync your projects.
 
 ### Quickstart
 
