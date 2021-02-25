@@ -94,8 +94,8 @@ runLangServer (i, o) Project{..} = do
         , Proc.processCWD  = root
         , Proc.processStdStreams = (Proc.ProcessCreate, Proc.ProcessCreate, Proc.ProcessCreate)
         }
-  Z.withResource (Proc.initProcess procOptions) $ \case
-    (Just stdin, Just stdout, Just stderr, pstate) -> do
+  Z.withResource (Proc.initProcess' procOptions) $ \case
+    (Just stdin, Just stdout, Just stderr, _pstate) -> do
       stderr' <- Z.newBufferedInput stderr
       stdout' <- Z.newBufferedInput stdout
 
@@ -108,13 +108,13 @@ runLangServer (i, o) Project{..} = do
           \input -> do
             Log.debug $ "ClientIn: " <> Builder.bytes input
             withPrimVectorSafe input (Z.writeOutput stdin)
+
       -- server out
       foreverWhen (Z.readBuffer stdout') (not . V.null) "Run LSP command failed!" $
         \output -> do
           Log.debug $ "ServerOut: " <> Builder.bytes output
           Z.writeBuffer o output >> Z.flushBuffer o
 
-      void $ Proc.waitProcessExit pstate
     _ -> error "Unexpected error!"
 
 -------------------------------------------------------------------------------

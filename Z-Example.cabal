@@ -60,7 +60,7 @@ executable z-lsp-network-server
     , base                  >=4.12.0.0 && <5
     , optparse-applicative  ^>=0.16
     , Z-Data                ^>=0.6
-    , Z-IO                  ^>=0.6.2
+    , Z-IO                  ^>=0.6.4
 
   default-language: Haskell2010
   ghc-options:
