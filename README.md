@@ -14,21 +14,14 @@ on remote machines, but use local file editors.
 
 ### Setup
 
-Make sure your `~/.local/bin` exists, and in the `PATH` environment variable.
-
-Then run `install.sh`:
+Install `z-simple-file-sync` by cabal:
 
 ```
-./install.sh z-simple-file-sync
+cabal install z-simple-file-sync
+cabal exec z-simple-file-sync /path/to/your/config.yaml
 ```
 
-Create a new config file, for example: [simple-file-sync.yaml](./FileSystem/config/simple_file_sync.yaml)
-
-Run:
-
-```
-z-simple-file-sync /path/to/your/config.yaml
-```
+An example config file: [simple-file-sync.yaml](./FileSystem/config/simple_file_sync.yaml)
 
 
 ## :fish_cake: LSP-Network :fish_cake:
