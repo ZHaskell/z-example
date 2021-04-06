@@ -12,7 +12,23 @@ This package provides several examples using [ZHaskell](https://github.com/ZHask
 Automaticly run `rsync` if change happens. This will helps if you do development
 on remote machines, but use local file editors.
 
-Config example: [simple-file-sync.yaml](./FileSystem/config/simple_file_sync.yaml)
+### Setup
+
+Make sure your `~/.local/bin` exists, and in the `PATH` environment variable.
+
+Then run `install.sh`:
+
+```
+./install.sh z-simple-file-sync
+```
+
+Create a new config file, for example: [simple-file-sync.yaml](./FileSystem/config/simple_file_sync.yaml)
+
+Run:
+
+```
+z-simple-file-sync /path/to/your/config.yaml
+```
 
 
 ## :fish_cake: LSP-Network :fish_cake:
