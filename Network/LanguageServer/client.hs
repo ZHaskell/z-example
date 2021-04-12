@@ -95,7 +95,7 @@ main = startClient' =<< Opt.execParser opts
 startClient :: ClientConfig -> IO ()
 startClient ClientConfig{..} = do
   projects <- YAML.readYAMLFile projectsPath
-  let logConfig = Log.defaultLoggerConfig {Log.loggerConfigLevel = logLevel}
+  let logConfig = Log.defaultLoggerConfig {Log.loggerLevel = logLevel}
   Log.setDefaultLogger =<< Log.newFileLogger logConfig logPath
 
   Log.info "--------------------- LSP-network Client ---------------------"

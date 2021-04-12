@@ -69,8 +69,8 @@ main = startServer =<< Opt.execParser opts
 startServer :: ServerConfig -> IO ()
 startServer ServerConfig{..} = Log.withDefaultLogger $ do
   let logConfig = Log.defaultLoggerConfig
-        { Log.loggerFormatter   = Log.defaultColoredFmt
-        , Log.loggerConfigLevel = logLevel
+        { Log.loggerFormatter = Log.defaultColoredFmt
+        , Log.loggerLevel     = logLevel
         }
   Log.setDefaultLogger =<< Log.newStdLogger logConfig
 
