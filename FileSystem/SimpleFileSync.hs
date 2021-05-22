@@ -13,9 +13,10 @@ import           Control.Exception.Safe  (tryAny)
 import           Control.Monad           (unless, void)
 import           GHC.Generics            (Generic)
 import qualified Z.Data.Builder          as Builder
-import           Z.Data.CBytes           (CBytes)
 import qualified Z.Data.CBytes           as CBytes
 import           Z.Data.JSON             (JSON)
+import           Z.Data.Text             (Text)
+import qualified Z.Data.Text             as Text
 import qualified Z.Data.Vector           as V
 import           Z.Data.YAML             (readYAMLFile)
 import           Z.IO.Environment        (getArgs)
@@ -25,9 +26,10 @@ import           Z.IO.LowResTimer        (throttleTrailing_)
 import qualified Z.IO.Process            as Proc
 
 data Project = Project
-  { src_path  :: CBytes
-  , dest_path :: CBytes
-  , ignores   :: [CBytes]
+  { src_path   :: Text
+  , dest_path  :: Text
+  , rsync_opts :: [Text]
+  , ignores    :: [Text]
   } deriving (Show, Generic, JSON)
 
 main :: IO ()
@@ -56,19 +58,18 @@ watchProject flagChange Project{..} = do
   -- no matter how many FileChange events are popped, we will notify only once
   -- after (2/10)s.
   throttledNotify <- throttleTrailing_ 2 (void $ tryPutMVar flagChange ())
-  watchDirs [src_path] True $ const throttledNotify
+  watchDirs [CBytes.fromText src_path] True $ const throttledNotify
 
 runRsync :: MVar () -> Project -> IO ()
 runRsync flagChange Project{..} = do
-  src_path' <- (<> "/") <$> normalize src_path     -- add a trailing slash
-  dest_path' <- (<> "/") <$> normalize dest_path   -- add a trailing slash
+  src_path' <- (<> "/") <$> normalize (CBytes.fromText src_path)     -- add a trailing slash
+  dest_path' <- (<> "/") <$> normalize (CBytes.fromText dest_path)   -- add a trailing slash
   let args = ["-azH", "--delete", "--partial"]
-          ++ concatMap (\i -> ["--exclude", i]) ignores
+          ++ concatMap (map CBytes.fromText . Text.words) rsync_opts
+          ++ concatMap (\i -> ["--exclude", CBytes.fromText i]) ignores
           ++ [src_path', dest_path']
-
   takeMVar flagChange
-  Log.debug $ "Run: rsync "
-           <> foldr (Builder.append . (<> " ") . CBytes.toBuilder) "" args
+  Log.debug $ "Run: rsync with args: " <> Text.toUTF8Builder args
   (_out, err, _code) <- Proc.readProcess
     Proc.defaultProcessOptions { Proc.processFile = "rsync"
                                , Proc.processArgs = args
