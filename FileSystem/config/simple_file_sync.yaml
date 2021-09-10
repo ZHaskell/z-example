@@ -1,9 +1,0 @@
-- src_path: .
-  dest_path: /tmp/aaa
-  rsync_opts:
-    - --exclude dist-newstyle
-    - --exclude local-data
-  # alias for --exclude
-  ignores:
-    - --exclude .stack-work
-    - stack.yaml.lock

@@ -1,3 +1,0 @@
-- root: /home/mumu/project/haskell-project
-  command: haskell-language-server-wrapper
-  args: ["--lsp"]
